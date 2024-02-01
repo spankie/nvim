@@ -4,6 +4,7 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
 	'tsserver', 'eslint', 'lua_ls', 'rust_analyzer',
+	'golangci_lint_ls', 'gopls'
 })
 
 lsp.on_attach(function(client, bufnr)
