@@ -16,8 +16,28 @@ vim.opt.rtp:prepend(lazypath)
 -- vim.apleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
 require("lazy").setup({
-  "folke/which-key.nvim", -- show suggestions for command you have started typing
-  -- { "folke/neoconf.nvim", cmd = "Neoconf" },
-  "folke/neodev.nvim", -- Neovim setup for init.lua and plugin development
-  { "nvim-telescope/telescope.nvim", tag = "0.1.5", dependencies = { "nvim-lua/plenary.nvim" } }
+	"folke/which-key.nvim", -- show suggestions for command you have started typing
+	-- { "folke/neoconf.nvim", cmd = "Neoconf" },
+	"folke/neodev.nvim", -- Neovim setup for init.lua and plugin development
+	{ "nvim-telescope/telescope.nvim", tag = "0.1.5", dependencies = { "nvim-lua/plenary.nvim" } },
+	"navarasu/onedark.nvim",
+	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+	-- "nvim-treesitter/playground"
+	"mbbill/undotree", -- not sure of this yet
+	"tpope/vim-fugitive",
+	{
+		'VonHeikemen/lsp-zero.nvim',
+		branch = 'v2.x',
+		dependencies = {
+			-- LSP Support
+			{'neovim/nvim-lspconfig'},             -- Required
+			{'williamboman/mason.nvim'},           -- Optional (If you don't install mason.nvim then you'll need to list the LSP servers you have installed using .setup_servers().
+			{'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+			-- Autocompletion
+			{'hrsh7th/nvim-cmp'},     -- Required
+			{'hrsh7th/cmp-nvim-lsp'}, -- Required
+			{'L3MON4D3/LuaSnip'},     -- Required
+		}
+	}
 })
