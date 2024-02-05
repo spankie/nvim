@@ -30,3 +30,6 @@ vim.opt.signcolumn = 'yes'
 vim.opt.colorcolumn = "100"
 
 vim.g.mapleader = " "
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'
