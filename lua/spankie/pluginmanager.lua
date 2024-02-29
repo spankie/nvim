@@ -18,9 +18,18 @@ vim.opt.rtp:prepend(lazypath)
 -- vim.apleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
 require("lazy").setup({
+  {
+    "folke/trouble.nvim", -- shows the disgnostics (errors) at the bottom of the page
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
   "folke/which-key.nvim", -- show suggestions for command you have started typing
   -- { "folke/neoconf.nvim", cmd = "Neoconf" },
-  "folke/neodev.nvim", -- Neovim setup for init.lua and plugin development
+  "folke/neodev.nvim",    -- Neovim setup for init.lua and plugin development
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.5",
@@ -43,7 +52,7 @@ require("lazy").setup({
   },
   "navarasu/onedark.nvim",
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-  { 'fatih/vim-go', build = ':GoUpdateBinaries' },
+  { 'fatih/vim-go',                    build = ':GoUpdateBinaries' },
   -- "nvim-treesitter/playground"
   "mbbill/undotree", -- not sure of this yet
   "tpope/vim-fugitive",
@@ -54,18 +63,18 @@ require("lazy").setup({
     -- config = false,
     dependencies = {
       -- LSP Support
-      {'neovim/nvim-lspconfig'},             -- Required
-      {'williamboman/mason.nvim'},           -- Optional (If you don't install mason.nvim then you'll need to list the LSP servers you have installed using .setup_servers().
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
+      { 'neovim/nvim-lspconfig' },           -- Required
+      { 'williamboman/mason.nvim' },         -- Optional (If you don't install mason.nvim then you'll need to list the LSP servers you have installed using .setup_servers().
+      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
       -- Autocompletion
-      {'hrsh7th/nvim-cmp'},     -- Required
-      {'hrsh7th/cmp-nvim-lsp'}, -- Required
-      {'L3MON4D3/LuaSnip'},     -- Required
+      { 'hrsh7th/nvim-cmp' },   -- Required
+      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+      { 'L3MON4D3/LuaSnip' },   -- Required
     }
   },
   { 'wakatime/vim-wakatime', lazy = false },
   "airblade/vim-gitgutter",
-  "tpope/vim-surround", -- not working at the moment
+  "tpope/vim-surround",       -- not working at the moment
   "scrooloose/nerdcommenter", -- check the docs (for remap): https://vimawesome.com/plugin/the-nerd-commenter
 })

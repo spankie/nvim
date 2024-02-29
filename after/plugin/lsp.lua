@@ -42,6 +42,13 @@ lsp_zero.on_attach(function(_, bufnr)
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
+
+  -- Setup trouble remap here because it uses some lsp stuff (I guess)
+  nmap("<leader>xx", function() require("trouble").toggle() end)
+  nmap("<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end)
+  nmap("<leader>xd", function() require("trouble").toggle("document_diagnostics") end)
+  nmap("<leader>xq", function() require("trouble").toggle("quickfix") end)
+  nmap("<leader>xl", function() require("trouble").toggle("loclist") end)
 end)
 
 -- don't add this function in the `on_attach` callback.
