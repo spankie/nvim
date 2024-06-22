@@ -22,5 +22,9 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", "\"_dp")
 -- copy to system clipboard
 vim.keymap.set("v", "<leader>y", "\"+y")
+-- close buffer with leader q
+vim.keymap.set("n", "<leader>q", ":bd<CR>")
+-- format the content of the buffer
+vim.keymap.set("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>")
 
 -- some more configuration can be done from thePrimeagen video (0 to LSP)
