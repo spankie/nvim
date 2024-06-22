@@ -74,9 +74,10 @@ require("lazy").setup({
     }
   },
   { 'wakatime/vim-wakatime',    lazy = false },
-  "airblade/vim-gitgutter",
-  "tpope/vim-surround",       -- not working at the moment
-  "scrooloose/nerdcommenter", -- check the docs (for remap): https://vimawesome.com/plugin/the-nerd-commenter
+  "airblade/vim-gitgutter", -- shows the git changes in the gutter besides the line numbers
+  "tpope/vim-surround",     -- use cs"' to change surrounding quotes in normal mode
+  'tpope/vim-commentary',
+  --"scrooloose/nerdcommenter", -- check the docs (for remap): https://vimawesome.com/plugin/the-nerd-commenter
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
@@ -99,7 +100,7 @@ require("lazy").setup({
       })
     end,
   },
-  --"Exafunction/codeium.vim"
+  -- "Exafunction/codeium.vim",
   ---- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   { -- Collection of various small independent plugins/modules
@@ -138,5 +139,12 @@ require("lazy").setup({
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
+  },
+  { -- Add indentation guides even on blank lines
+    'lukas-reineke/indent-blankline.nvim',
+    -- Enable `lukas-reineke/indent-blankline.nvim`
+    -- See `:help ibl`
+    main = 'ibl',
+    opts = {},
   },
 })
