@@ -1,3 +1,5 @@
+vim.lsp.set_log_level("debug")
+
 vim.g.mapleader = " "
 -- show netrw file explorer
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
@@ -23,8 +25,8 @@ vim.keymap.set("x", "<leader>p", "\"_dp")
 -- copy to system clipboard
 vim.keymap.set("v", "<leader>y", "\"+y")
 -- close buffer with leader q
-vim.keymap.set("n", "<leader>q", ":bd<CR>")
+vim.keymap.set("n", "<leader>bd", ":bd<CR>")
 -- format the content of the buffer
-vim.keymap.set("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>")
+vim.keymap.set("n", "<leader>f", ":lua vim.lsp.buf.format()<CR>")
 
 -- some more configuration can be done from thePrimeagen video (0 to LSP)
