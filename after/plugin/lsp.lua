@@ -77,7 +77,7 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {
     'tsserver', 'eslint', 'lua_ls', 'rust_analyzer',
-    'golangci_lint_ls', 'gopls'
+    'golangci_lint_ls', 'gopls', 'tailwindcss'
   },
   handlers = {
     lsp_zero.default_setup,
