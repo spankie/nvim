@@ -1,4 +1,4 @@
-vim.lsp.set_log_level("debug")
+vim.lsp.set_log_level("error")
 
 vim.g.mapleader = " "
 -- show netrw file explorer

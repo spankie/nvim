@@ -168,6 +168,23 @@ cmp.setup({
   },
 })
 
+-- local configs = require('lspconfig/configs')
+
+if not require('lspconfig/configs').golangcilsp then
+ 	require('lspconfig/configs').golangcilsp = {
+		default_config = {
+			cmd = {'golangci-lint-langserver'},
+			root_dir = require('lspconfig').util.root_pattern('.git', 'go.mod'),
+			init_options = {
+					command = { "golangci-lint", "run", "--enable-all", "--disable", "lll", "--out-format", "json", "--issues-exit-code=1" };
+			}
+		};
+	}
+end
+require('lspconfig').golangci_lint_ls.setup {
+	filetypes = {'go','gomod'}
+}
+
 -- local lsp = require('lsp-zero').preset({})
 
 -- lsp.preset("recommended")
