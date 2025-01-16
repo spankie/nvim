@@ -44,11 +44,15 @@ lsp_zero.on_attach(function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 
   -- Setup trouble remap here because it uses some lsp stuff (I guess)
-  nmap("<leader>xx", function() require("trouble").toggle() end)
+  nmap("<leader>xx", function() require("trouble").toggle("diagnostics") end)
   nmap("<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end)
   nmap("<leader>xd", function() require("trouble").toggle("document_diagnostics") end)
   nmap("<leader>xq", function() require("trouble").toggle("quickfix") end)
   nmap("<leader>xl", function() require("trouble").toggle("loclist") end)
+
+  -- move to next diagnostics
+  nmap("[d", vim.diagnostic.goto_prev)
+  nmap("]d", vim.diagnostic.goto_next)
 end)
 
 -- don't add this function in the `on_attach` callback.
@@ -77,7 +81,8 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {
     'tsserver', 'eslint', 'lua_ls', 'rust_analyzer',
-    'golangci_lint_ls', 'gopls', 'tailwindcss'
+    'gopls', 'tailwindcss',
+    -- 'golangci_lint_ls',
   },
   handlers = {
     lsp_zero.default_setup,
@@ -170,6 +175,8 @@ cmp.setup({
 
 -- local configs = require('lspconfig/configs')
 
+--[[
+-- comment out golang ci lint because it take too much memory
 if not require('lspconfig/configs').golangcilsp then
  	require('lspconfig/configs').golangcilsp = {
 		default_config = {
@@ -184,6 +191,7 @@ end
 require('lspconfig').golangci_lint_ls.setup {
 	filetypes = {'go','gomod'}
 }
+--]]
 
 -- local lsp = require('lsp-zero').preset({})
 
