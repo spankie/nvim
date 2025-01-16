@@ -27,6 +27,6 @@ vim.keymap.set("v", "<leader>y", "\"+y")
 -- close buffer with leader q
 vim.keymap.set("n", "<leader>bd", ":bd<CR>")
 -- format the content of the buffer
-vim.keymap.set("n", "<leader>f", ":lua vim.lsp.buf.format()<CR>")
+vim.keymap.set("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>")
 
 -- some more configuration can be done from thePrimeagen video (0 to LSP)
