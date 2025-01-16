@@ -2,7 +2,7 @@ require"nvim-treesitter.configs".setup {
   ensure_installed = {
     "go", "lua", "json", "vim", "vimdoc",
     "tsx", "css", "rust", "typescript",
-    "javascript", "html", "python", "c"
+    "javascript", "html", "python", "c", "zig"
   },
   sync_install = false,
   highlight = {
